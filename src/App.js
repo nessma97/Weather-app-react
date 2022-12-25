@@ -11,9 +11,12 @@ function App() {
 
   const searchResult = (e) => {
     if (e.key === "Enter") {
-      fetch(`${weatherApi.base}weather?q=${city}&appid=${weatherApi.key}`)
+      fetch(
+        `${weatherApi.base}weather?q=${city}&appid=${weatherApi.key}&units=metric`
+      )
         .then((res) => res.json())
         .then((result) => {
+          console.log(result);
           setWeather(result);
           setCity("");
         })
@@ -63,10 +66,12 @@ function App() {
     <div
       className={
         typeof weather.main !== "undefined"
-          ? weather.main.temp > 16
-            ? "app warm"
-            : "app "
-          : "app "
+          ? weather.main.temp <= 0 && weather.main.temp < 10
+            ? "app snow"
+            : weather.main.temp >= 10 && weather.main.temp <= 18
+            ? "app "
+            : "app warm"
+          : "app warm"
       }
     >
       <main>

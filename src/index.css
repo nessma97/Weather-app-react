@@ -25,6 +25,10 @@ body {
   background-image: url("./sunny.jpg");
 }
 
+.app.snow {
+  background-image: url("./snow.jpg");
+}
+
 main {
   padding: 1rem;
   background-image: linear-gradient(
@@ -103,9 +107,9 @@ main {
 }
 
 .Error {
-  color: rgb(113, 5, 5);
+  color: rgb(216, 216, 216);
   text-align: center;
-  margin-block: 2rem;
+  margin-block: 3rem;
   font-size: 1rem;
   font-weight: 700;
   text-shadow: 2px 2px rgba(0, 0, 0, 0.087);
